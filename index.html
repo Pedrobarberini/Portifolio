@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfólio | Pedro Barberini</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="javacript.js">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    
+</head>
+<body>
+    <header>
+        <h1>Pedro Barberini</h1>
+        <p>Desenvolvedor Web | Front-end & Back-end</p>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#skills">Skills</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="about" id="sobre">
+            <img src="https://i.pravatar.cc/300?img=1" alt="Foto de perfil">
+            <div class="about-text">
+                <h2>Sobre mim</h2>
+                <p>
+               Olá, meu nome é Pedro Barberini. Sou desenvolvedor de sistemas e atualmente estou cursando o terceiro semestre do curso de Análise e Desenvolvimento de Sistemas.
+
+            Tenho foco em desenvolvimento front-end e aplicações mobile, áreas nas quais busco constantemente aprimorar meus conhecimentos técnicos e habilidades práticas. Sou comprometido com a criação de soluções eficientes, com interfaces intuitivas e alinhadas às boas práticas de usabilidade e performance.
+
+            Estou em constante evolução, sempre em busca de novos aprendizados e desafios que contribuam para meu crescimento profissional e para o sucesso dos projetos nos quais estou envolvido.
+
+            Este portfólio reúne alguns dos trabalhos que desenvolvi ao longo da minha trajetória, demonstrando meu comprometimento, organização e dedicação ao desenvolvimento de software de qualidade.
+                </p>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Node.js</span>
+                <span>Git & GitHub</span>
+                <span>Figma</span>
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>Kotlin</span>
+                <span>Jetpack compose</span>
+                <span>Reatjs</span>
+                <span>React Native</span>
+                <span>Bootstrap</span>
+                <span>Vuejs</span>
+                <span>C#</span>
+                <!-- Popups -->
+                <div id="popup" class="popup" style="display:none;">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="closePopup()">&times;</span>
+                        <h3 id="popup-title"></h3>
+                        <p id="popup-desc"></p>
+                    </div>
+                </div>
+                <script>
+                    // Cursos por skill
+                    const skillCourses = {
+                        "HTML5": "Curso: HTML5 Essencial -FIAP contrução e desenvolvimento em html .",
+                        "CSS3": "Curso: CSS3 Completo - FIAP Estilização avançada e responsiva.",
+                        "JavaScript": "Curso: Alura JavaScript do Zero ao Avançado - Lógica, DOM e ES6+, Programação orientada a objetos.",
+                        "Node.js": "Curso: ALURA Node.js e Express - Backend com JavaScript.",
+                        "Git & GitHub": "Curso: ALURA Git e GitHub - Controle de versão e colaboração.",
+                        "Figma": "Curso: FIAP Figma para Designers e Devs - Prototipagem e UI/UX.",
+                        "SQL": "Curso: FIAP SQL Básico ao Avançado - Consultas e modelagem de dados.",
+                        "Python": "Curso: FIAP Python para Iniciantes - Sintaxe, lógica e aplicações.",
+                        "Java": "Curso: ALURA/FIAP Java Completo - Orientação a Objetos e aplicações desktop.",
+                        "Kotlin": "Curso: FIAP/ALURA Kotlin para Android - Desenvolvimento mobile moderno.",
+                        "Jetpack compose": "Curso: FIAP/ALURA Jetpack Compose - UI declarativa para Android.",
+                        "Reatjs": "Curso: ALURA React.js Essencial - Componentes, hooks e SPA.",
+                        "React Native": "Curso: ALURA React Native - Apps mobile multiplataforma.",
+                        "Bootstrap": "Curso: FIAP Bootstrap 5 - Layouts responsivos e componentes.",
+                        "Vuejs": "Curso: ALURA Vue.js do Básico ao Avançado - Framework progressivo.",
+                        "C#": "Curso: FIAP C# e .NET - Desenvolvimento desktop e web."
+                    };
+
+                    // Torna os spans clickáveis
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.querySelectorAll('.skills-list span').forEach(function(span) {
+                            span.style.cursor = "pointer";
+                            span.addEventListener('click', function() {
+                                const skill = span.textContent.trim();
+                                document.getElementById('popup-title').textContent = skill;
+                                document.getElementById('popup-desc').textContent = skillCourses[skill] || "Curso não encontrado";
+                                document.getElementById('popup').style.display = "flex";
+                        });
+                    
+                        document.getElementById('popup').addEventListener('click', function(e) {
+                            if (e.target === this) {
+                                closePopup();
+                            }
+                        });
+                        document.querySelector('.close-btn').textContent = "next";
+                    });
+                    });
+
+                    function closePopup() {
+                        document.getElementById('popup').style.display = "none";
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section class="projects" id="projetos">
+            <h2>Projetos</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Ifinance</h3>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                    <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                    <a href="https://github.com/Pedrobarberini" target="_blank">Ver no GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Vagacerta</h3>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                    <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                    <a href="https://github.com/Pedrobarberini" target="_blank">Ver no GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Emprega+</h3>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                    <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                    <a href="https://github.com/Pedrobarberini/Cadastro" target="_blank">Ver no GitHub</a>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contato">
+            <h2>Contatos</h2>
+            <h3>Email: barberinipedro@gmail.com</h3>
+            <h3>Telefone: (11)943596535</h3>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Todos os direitos reservados.
+    </footer>
+</body>
+</html>
