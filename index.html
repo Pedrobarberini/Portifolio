@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfólio</title>
@@ -68,12 +69,10 @@
                                 document.getElementById('popup').style.display = "flex";
                         });
                     
-                        document.getElementById('popup').addEventListener('click', function(e) {
-                            if (e.target === this) {
+                        document.querySelector('.close-btn').addEventListener('click', function () {
                                 closePopup();
-                            }
                         });
-                        document.querySelector('.close-btn').textContent = "next";
+                        document.querySelector('.close-btn').textContent = "x";
                     });
                     });
 
@@ -115,26 +114,26 @@
             <div class="project-grid">
                 <div class="project-card">
                     <h3>Ifinance</h3>
-                    <a href="file:///C:/Users/barbe/OneDrive/Desktop/Portif%C3%B3lio/pages/Ifinance.html#sobre" target="_blank">Ver Projeto</a>
+                    <a href="pages\Ifinance.html" target="_blank">Ver Projeto</a>
                     <p>Uma Fintech desenvolvida com parceria da Ifood para facilitar a compra no aplicativo. Tecnologias usadas: HTML, CSS, JavaScript</p>
                     <a href="https://github.com/Pedrobarberini" target="_blank">Ver no GitHub</a>
                 </div>
                 <div class="project-card">
                     <h3>Vagacerta</h3>
-                    <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\vagaCerta.html" target="_blank">Ver Projeto</a>
+                    <a href="pages\vagaCerta.html" target="_blank">Ver Projeto</a>
                     <p>Desenvolvido para acessibilidade e assistencia ao candidato as vagas de emprego disponiveis. Tecnologias usadas: VueJs, CSS , HTML e JavaScript </p>
                     <a href="https://github.com/Pedrobarberini/WebVagaCerta" target="_blank">Ver no GitHub</a>
                 </div>
                 
                 <div class="project-card">
                 <h3>Emprega+</h3>
-                <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\empregaMais.html" target="_blank">Ver Projeto</a>
+                <a href="pages\empregaMais.html" target="_blank">Ver Projeto</a>
                 <p>desenvolvido versão mobile do site Emprega+ com parceria do mesmo. Tecnologias usadas: Kotlin, Jetpack Compose</p>
                     <a href="https://github.com/Pedrobarberini/Cadastro" target="_blank">Ver no GitHub</a>
                 </div>
                 <div class="project-card">
-                <h3>softtek-mental</h3>
-                <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\softtek-mental.html" target="_blank">Ver Projeto</a>
+                <h3>Softtek-Mental</h3>
+                <a href="pages\softtek-mental.html" target="_blank">Ver Projeto</a>
                 <p>Aplicativo criado para assistencia psicologica de funcionarios e trabalhadores. Tecnologias usadas: Kotlin, Jetpack Compose</p>
                     <a href="https://github.com/Pedrobarberini/Cadastro" target="_blank">Ver no GitHub</a>
                 </div>
