@@ -38,6 +38,49 @@
                 </p>
             </div>
         </section>
+        <script>
+            
+        const skillCourses = {
+                        "HTML5": "HTML5 Essencial -FIAP contrução e desenvolvimento em html .",
+                        "CSS3": " CSS3 Completo - FIAP Estilização avançada e responsiva.",
+                        "JavaScript": " Alura JavaScript do Zero ao Avançado - Lógica, DOM e ES6+, Programação orientada a objetos.",
+                        "Node.js": " ALURA Node.js e Express - Backend com JavaScript.",
+                        "Git & GitHub": " ALURA Git e GitHub - Controle de versão e colaboração.",
+                        "Figma": " FIAP Figma para Designers e Devs - Prototipagem e UI/UX.",
+                        "SQL": " FIAP SQL Básico ao Avançado - Consultas e modelagem de dados.",
+                        "Python": " FIAP Python para Iniciantes - Sintaxe, lógica e aplicações.",
+                        "Java": " ALURA/FIAP Java Completo - Orientação a Objetos e aplicações desktop.",
+                        "Kotlin": " FIAP/ALURA Kotlin para Android - Desenvolvimento mobile moderno.",
+                        "Jetpack compose": " FIAP/ALURA Jetpack Compose - UI declarativa para Android.",
+                        "Reatjs": " ALURA React.js Essencial - Componentes, hooks e SPA.",
+                        "React Native": " ALURA React Native - Apps mobile multiplataforma.",
+                        "Bootstrap": " FIAP Bootstrap 5 - Layouts responsivos e componentes.",
+                        "Vuejs": " ALURA Vue.js do Básico ao Avançado - Framework progressivo.",
+                        "C#": " FIAP C# e .NET - Desenvolvimento desktop e web."
+                    };
+                    document.addEventListener("DOMContentLoaded", function() {
+                        document.querySelectorAll('.skills-list span').forEach(function(span) {
+                            span.style.cursor = "pointer";
+                            span.addEventListener('click', function() {
+                                const skill = span.textContent.trim();
+                                document.getElementById('popup-title').textContent = skill;
+                                document.getElementById('popup-desc').textContent = skillCourses[skill] || "Descrição não disponível.";
+                                document.getElementById('popup').style.display = "flex";
+                        });
+                    
+                        document.getElementById('popup').addEventListener('click', function(e) {
+                            if (e.target === this) {
+                                closePopup();
+                            }
+                        });
+                        document.querySelector('.close-btn').textContent = "next";
+                    });
+                    });
+
+                    function closePopup() {
+                        document.getElementById('popup').style.display = "none";
+                    }
+        </script>
 
         <section class="skills" id="skills">
             <h2>Skills</h2>
@@ -58,61 +101,14 @@
                 <span>Bootstrap</span>
                 <span>Vuejs</span>
                 <span>C#</span>
-                <!-- Popups -->
+
                 <div id="popup" class="popup" style="display:none;">
                     <div class="popup-content">
                         <span class="close-btn" onclick="closePopup()">&times;</span>
                         <h3 id="popup-title"></h3>
                         <p id="popup-desc"></p>
-                    </div>
                 </div>
-                <script>
-                    // Cursos por skill
-                    const skillCourses = {
-                        "HTML5": "Curso: HTML5 Essencial -FIAP contrução e desenvolvimento em html .",
-                        "CSS3": "Curso: CSS3 Completo - FIAP Estilização avançada e responsiva.",
-                        "JavaScript": "Curso: Alura JavaScript do Zero ao Avançado - Lógica, DOM e ES6+, Programação orientada a objetos.",
-                        "Node.js": "Curso: ALURA Node.js e Express - Backend com JavaScript.",
-                        "Git & GitHub": "Curso: ALURA Git e GitHub - Controle de versão e colaboração.",
-                        "Figma": "Curso: FIAP Figma para Designers e Devs - Prototipagem e UI/UX.",
-                        "SQL": "Curso: FIAP SQL Básico ao Avançado - Consultas e modelagem de dados.",
-                        "Python": "Curso: FIAP Python para Iniciantes - Sintaxe, lógica e aplicações.",
-                        "Java": "Curso: ALURA/FIAP Java Completo - Orientação a Objetos e aplicações desktop.",
-                        "Kotlin": "Curso: FIAP/ALURA Kotlin para Android - Desenvolvimento mobile moderno.",
-                        "Jetpack compose": "Curso: FIAP/ALURA Jetpack Compose - UI declarativa para Android.",
-                        "Reatjs": "Curso: ALURA React.js Essencial - Componentes, hooks e SPA.",
-                        "React Native": "Curso: ALURA React Native - Apps mobile multiplataforma.",
-                        "Bootstrap": "Curso: FIAP Bootstrap 5 - Layouts responsivos e componentes.",
-                        "Vuejs": "Curso: ALURA Vue.js do Básico ao Avançado - Framework progressivo.",
-                        "C#": "Curso: FIAP C# e .NET - Desenvolvimento desktop e web."
-                    };
-
-                    // Torna os spans clickáveis
-                    document.addEventListener("DOMContentLoaded", function() {
-                        document.querySelectorAll('.skills-list span').forEach(function(span) {
-                            span.style.cursor = "pointer";
-                            span.addEventListener('click', function() {
-                                const skill = span.textContent.trim();
-                                document.getElementById('popup-title').textContent = skill;
-                                document.getElementById('popup-desc').textContent = skillCourses[skill] || "Curso não encontrado";
-                                document.getElementById('popup').style.display = "flex";
-                        });
-                    
-                        document.getElementById('popup').addEventListener('click', function(e) {
-                            if (e.target === this) {
-                                closePopup();
-                            }
-                        });
-                        document.querySelector('.close-btn').textContent = "next";
-                    });
-                    });
-
-                    function closePopup() {
-                        document.getElementById('popup').style.display = "none";
-                    }
-                </script>
-            </div>
-        </section>
+            </section>
 
         <section class="projects" id="projetos">
             <h2>Projetos</h2>
@@ -120,25 +116,26 @@
                 <div class="project-card">
                     <h3>Ifinance</h3>
                     <a href="file:///C:/Users/barbe/OneDrive/Desktop/Portif%C3%B3lio/pages/Ifinance.html#sobre" target="_blank">Ver Projeto</a>
-                    <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                    <p>Uma Fintech desenvolvida com parceria da Ifood para facilitar a compra no aplicativo. Tecnologias usadas: HTML, CSS, JavaScript</p>
                     <a href="https://github.com/Pedrobarberini" target="_blank">Ver no GitHub</a>
                 </div>
                 <div class="project-card">
                     <h3>Vagacerta</h3>
                     <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\vagaCerta.html" target="_blank">Ver Projeto</a>
-                    <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                    <p>Desenvolvido para acessibilidade e assistencia ao candidato as vagas de emprego disponiveis. Tecnologias usadas: VueJs, CSS , HTML e JavaScript </p>
                     <a href="https://github.com/Pedrobarberini/WebVagaCerta" target="_blank">Ver no GitHub</a>
                 </div>
+                
                 <div class="project-card">
                 <h3>Emprega+</h3>
                 <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\empregaMais.html" target="_blank">Ver Projeto</a>
-                <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                <p>desenvolvido versão mobile do site Emprega+ com parceria do mesmo. Tecnologias usadas: Kotlin, Jetpack Compose</p>
                     <a href="https://github.com/Pedrobarberini/Cadastro" target="_blank">Ver no GitHub</a>
                 </div>
                 <div class="project-card">
                 <h3>softtek-mental</h3>
                 <a href="C:\Users\barbe\OneDrive\Desktop\Portifólio\pages\softtek-mental.html" target="_blank">Ver Projeto</a>
-                <p>Descrição breve do projeto, tecnologias utilizadas e principais funcionalidades.</p>
+                <p>Aplicativo criado para assistencia psicologica de funcionarios e trabalhadores. Tecnologias usadas: Kotlin, Jetpack Compose</p>
                     <a href="https://github.com/Pedrobarberini/Cadastro" target="_blank">Ver no GitHub</a>
                 </div>
             </div>
@@ -147,10 +144,11 @@
             <h2>Contatos</h2>
             <h3>Email: barberinipedro@gmail.com</h3>
             <h3>Telefone: (11)943596535</h3>
+            <h3>Taboão Da Serra, Av vida nova 156, Ap 82 Bloco A</h3>
         </section>
     </div>
     <footer>
-        &copy; 2024 Todos os direitos reservados.
+        &copy; 2025 Todos os direitos reservados.
     </footer>
 </body>
 </html>
