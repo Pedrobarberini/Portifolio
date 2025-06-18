@@ -219,3 +219,21 @@
             .about img { margin-bottom: 20px; }
             .container { padding: 0 8px; }
         }
+        
+        .social-links {
+            text-align: center; 
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            font-size: 2.5rem; 
+            color: #2c3e50;    
+            margin: 0 1rem;    
+            text-decoration: none;
+            transition: all 0.3s ease; 
+        }
+
+        .social-icon:hover {
+            color: #0077b5; 
+            transform: scale(1.1); 
+        }
