@@ -13,14 +13,33 @@
     
 </head>
 <body>
+<script> /**
+         * Função para rolar suavemente até uma seção específica da página.
+         * @param {string} sectionId - O ID da seção para a qual rolar (ex: 'skills').
+         * @param {Event} event - O objeto do evento de clique para prevenir o comportamento padrão.
+         */
+        function scrollToSection(sectionId, event) {
+          event.preventDefault();
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          } else {
+            console.warn("A seção com o ID '" + sectionId + "' não foi encontrada.");
+          }
+        }
+</script>
     <header>
         <h1>Pedro Barberini</h1>
         <p>Desenvolvedor Web | Front-end & Back-end</p>
         <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#skills">Skills</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
+       <a href="#sobre" onclick="scrollToSection('sobre', event)">Sobre</a>
+            <a href="#skills" onclick="scrollToSection('skills', event)">Skills</a>
+            <a href="#projetos" onclick="scrollToSection('projetos', event)">Projetos</a>
+            <a href="#contato" onclick="scrollToSection('contato', event)">Contato</a>
+        </a>
         </nav>
     </header>
     <div class="container">
@@ -40,51 +59,89 @@
             </div>
         </section>
         <script>
-            
-        const skillCourses = {
-                        "HTML5": "HTML5 Essencial -FIAP contrução e desenvolvimento em html .",
-                        "CSS3": " CSS3 Completo - FIAP Estilização avançada e responsiva.",
-                        "JavaScript": " Alura JavaScript do Zero ao Avançado - Lógica, DOM e ES6+, Programação orientada a objetos.",
-                        "Node.js": " ALURA Node.js e Express - Backend com JavaScript.",
-                        "Git & GitHub": " ALURA Git e GitHub - Controle de versão e colaboração.",
-                        "Figma": " FIAP Figma para Designers e Devs - Prototipagem e UI/UX.",
-                        "SQL": " FIAP SQL Básico ao Avançado - Consultas e modelagem de dados.",
-                        "Python": " FIAP Python para Iniciantes - Sintaxe, lógica e aplicações.",
-                        "Java": " ALURA/FIAP Java Completo - Orientação a Objetos e aplicações desktop.",
-                        "Kotlin": " FIAP/ALURA Kotlin para Android - Desenvolvimento mobile moderno.",
-                        "Jetpack compose": " FIAP/ALURA Jetpack Compose - UI declarativa para Android.",
-                        "Reactjs": " ALURA React.js Essencial - Componentes, hooks e SPA.",
-                        "React Native": " ALURA React Native - Apps mobile multiplataforma.",
-                        "Bootstrap": " FIAP Bootstrap 5 - Layouts responsivos e componentes.",
-                        "Vuejs": " ALURA Vue.js do Básico ao Avançado - Framework progressivo.",
-                        "C#": " FIAP C# e .NET - Desenvolvimento desktop e web.",
-                        "TypeScript": " ALURA TypeScript - JavaScript tipado e escalável.",
-                        "Razor": " ALURA Razor Pages - Desenvolvimento web com C# e ASP.NET.",
-                        "Django": " ALURA Django - Framework web para Python.",
-                        "Oracle": " FIAP Oracle SQL e PL/SQL - Banco de dados relacional.",
-                        "PL/SQL": " FIAP PL/SQL Avançado - Procedimentos, funções e triggers."
-                    };
-                    document.addEventListener("DOMContentLoaded", function() {
-                        document.querySelectorAll('.skills-list span').forEach(function(span) {
-                            span.style.cursor = "pointer";
-                            span.addEventListener('click', function() {
-                                const skill = span.textContent.trim();
-                                document.getElementById('popup-title').textContent = skill;
-                                document.getElementById('popup-desc').textContent = skillCourses[skill] || "Descrição não disponível.";
-                                document.getElementById('popup').style.display = "flex";
-                        });
-                    
-                        document.querySelector('.close-btn').addEventListener('click', function () {
-                                closePopup();
-                        });
-                        document.querySelector('.close-btn').textContent = " x ";
-                    });
-                    });
+    document.addEventListener('DOMContentLoaded', () => {
 
-                    function closePopup() {
-                        document.getElementById('popup').style.display = "none";
-                    }
-        </script>
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('visible');
+        });
+    }
+
+
+    const skillCourses = {
+        "HTML5": "HTML5 Essencial - FIAP: Construção e desenvolvimento em HTML.",
+        "CSS3": "CSS3 Completo - FIAP: Estilização avançada e responsiva.",
+        "JavaScript": "Alura - JavaScript do Zero ao Avançado: Lógica, DOM, ES6+ e Programação Orientada a Objetos.",
+        "Node.js": "ALURA - Node.js e Express: Backend com JavaScript.",
+        "Git & GitHub": "ALURA - Git e GitHub: Controle de versão e colaboração.",
+        "Figma": "FIAP - Figma para Designers e Devs: Prototipagem e UI/UX.",
+        "SQL": "FIAP - SQL Básico ao Avançado: Consultas e modelagem de dados.",
+        "Python": "FIAP - Python para Iniciantes: Sintaxe, lógica e aplicações.",
+        "Java": "ALURA/FIAP - Java Completo: Orientação a Objetos e aplicações desktop.",
+        "Kotlin": "FIAP/ALURA - Kotlin para Android: Desenvolvimento mobile moderno.",
+        "Jetpack compose": "FIAP/ALURA - Jetpack Compose: UI declarativa para Android.",
+        "Reactjs": "ALURA - React.js Essencial: Componentes, hooks e SPA.",
+        "React Native": "ALURA - React Native: Apps mobile multiplataforma.",
+        "Bootstrap": "FIAP - Bootstrap 5: Layouts responsivos e componentes.",
+        "Vuejs": "ALURA - Vue.js do Básico ao Avançado: Framework progressivo.",
+        "C#": "FIAP - C# e .NET: Desenvolvimento desktop e web.",
+        "TypeScript": "ALURA - TypeScript: JavaScript tipado e escalável.",
+        "Razor": "ALURA - Razor Pages: Desenvolvimento web com C# e ASP.NET.",
+        "Django": "ALURA - Django: Framework web para Python.",
+        "Oracle": "FIAP - Oracle SQL e PL/SQL: Banco de dados relacional.",
+        "PL/SQL": "FIAP - PL/SQL Avançado: Procedimentos, funções e triggers."
+    };
+
+
+    const skillsListContainer = document.querySelector('.skills-list');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.querySelector('.close-btn');
+    
+
+    if (skillsListContainer && popup && closeBtn) {
+        
+
+        document.querySelectorAll('.skills-list span').forEach(function(span) {
+            span.style.cursor = "pointer";
+            span.addEventListener('click', function() {
+                const skill = span.textContent.trim();
+                document.getElementById('popup-title').textContent = skill;
+                document.getElementById('popup-desc').textContent = skillCourses[skill] || "Descrição não disponível.";
+                popup.style.display = "flex";
+            });
+        });
+
+
+        closeBtn.addEventListener('click', function () {
+            closePopup();
+        });
+        
+
+        closeBtn.textContent = "x";
+
+
+        popup.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                closePopup();
+            }
+        });
+    }
+});
+
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    if (popup) {
+      popup.style.display ="none";
+}
+
+
+
+}</script>
 
         <section class="skills" id="skills">
             <h2>Skills</h2>
@@ -156,6 +213,7 @@
             <h3>Taboão Da Serra, Av vida nova 156, Ap 82 Bloco A</h3>
         </section>
     </div>
+    <script> src="javascript/script.js"</script>
     <footer>
         &copy; 2025 Todos os direitos reservados.
     </footer>
